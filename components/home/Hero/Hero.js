@@ -12,7 +12,7 @@ export default function Hero() {
       />
       <div className="flex flex-col gap-10">
         <div>
-          <div className="text-4xl">Hi, It's Mukul!</div>
+          <div className="text-4xl">Hi, It&apos;s Mukul!</div>
           <div className="flex gap-5 pt-5 ">
             <a
               href="https://www.linkedin.com/in/mukul-kumar-488b1119b/"
@@ -25,9 +25,9 @@ export default function Hero() {
             </a>
           </div>
         </div>
-        <p>
-          I've developed NextBLOG, a cutting-edge fullstack webapp built using
-          NextJS.
+        <div>
+          I&apos;ve developed NextBLOG, a cutting-edge fullstack webapp built
+          using NextJS.
           <br /> This project showcases my ability to build modern, responsive
           web applications with a focus on user experience and scalability.
           <div className="flex gap-8 my-10">
@@ -52,7 +52,7 @@ export default function Hero() {
             <li>⚡ Using MongoDB to store all blogs.</li>
             <li>💾 Fully CRUD supported Blogs.</li>
           </ul>
-        </p>
+        </div>
       </div>
     </section>
   );

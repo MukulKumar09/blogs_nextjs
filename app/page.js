@@ -8,7 +8,11 @@ export default async function Home(props) {
   return (
     <div className="flex flex-col gap-20">
       <Hero />
-      <FeaturedPosts posts={res} />
+      {Array.isArray(res) && res.length > 0 ? (
+        <FeaturedPosts posts={res} />
+      ) : (
+        <>No posts yet</>
+      )}
     </div>
   );
 }
