@@ -10,7 +10,7 @@ export async function GET() {
       });
 
       if (listResult.blobs.length > 0) {
-        await del(listResult.blobs.map((blob) => blob.url));
+        // await del(listResult.blobs.map((blob) => blob.url));
       }
 
       cursor = listResult.cursor;

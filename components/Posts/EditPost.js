@@ -18,7 +18,7 @@ export default function EditPost({ post }) {
       const res = await fetch(`/api/blobs/get-single/${_id}`);
       const imageRes = await res.json();
       console.log("response \n\n\n\n", imageRes);
-      if (imageRes[0].url) setImage(imageRes[0].url);
+      if (imageRes[0]) setImage(imageRes[0]);
     }
     asyncFetch();
   }, []);
