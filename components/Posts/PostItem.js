@@ -18,7 +18,7 @@ export default function PostItem({ post, index }) {
       const res = await fetch(`/api/blobs/get-single/${id}`);
       const imageRes = await res.json();
       console.log("response \n\n\n\n", imageRes);
-      if (imageRes[0]) setImageUrl(imageRes[0]);
+      if (imageRes[0]) setImageUrl(imageRes[0].url);
     }
     asyncFetch();
   }, []);
