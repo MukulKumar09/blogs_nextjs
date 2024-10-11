@@ -1,19 +1,24 @@
+"use client";
+import { useEffect, useState } from "react";
 import FeaturedPosts from "@/components/home/FeaturedPosts/FeaturedPosts";
 import Hero from "@/components/home/Hero/Hero";
-import dbOperation from "@/app/helpers/dbOperation";
 
-async function getFeaturedPosts() {
-  const res = await dbOperation("get", { isFeatured: true });
-  return Array.isArray(res) ? res : [];
-}
+export default function Home() {
+  const [posts, setPosts] = useState([]);
 
-export default async function Home() {
-  const posts = await getFeaturedPosts();
+  useEffect(() => {
+    async function asyncFetch() {
+      const res = await fetch(`/api/posts/featured-posts/`);
+      const posts = await res.json();
+      setPosts(posts);
+    }
+    asyncFetch();
+  }, []);
 
   return (
     <div className="flex flex-col gap-20">
       <Hero />
-      {posts.length > 0 ? <FeaturedPosts posts={posts} /> : <>No posts yet</>}
+      {posts.length > 0 && <FeaturedPosts posts={posts} />}
     </div>
   );
 }
