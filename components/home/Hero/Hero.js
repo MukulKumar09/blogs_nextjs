@@ -50,7 +50,6 @@ export default function Hero() {
             <li> in React.</li>
             <li>🌈 Using TailwindCSS for UI Tooling.</li>
             <li>⚡ Using MongoDB to store all blogs.</li>
-            <li>💾 Fully CRUD supported Blogs.</li>
           </ul>
         </div>
       </div>
