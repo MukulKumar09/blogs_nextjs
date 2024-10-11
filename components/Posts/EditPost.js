@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import editPost from "@/app/helpers/editPost";
 import postImage from "@/app/helpers/postImage";
@@ -11,8 +11,17 @@ export default function EditPost({ post }) {
   const { push } = useRouter();
   const { _id, title, content, isFeatured, extension } = post;
   const path = "/posts/" + _id;
-  const [image, setImage] = useState(postImage(_id, extension));
   const [openSnackbar, closeSnackbar] = useSnackbar();
+  const [image, setImage] = useState("");
+  useEffect(() => {
+    async function asyncFetch() {
+      const res = await fetch(`/api/blobs/get-single/${_id}`);
+      const imageRes = await res.json();
+      console.log("response \n\n\n\n", imageRes);
+      if (imageRes[0].url) setImage(imageRes[0].url);
+    }
+    asyncFetch();
+  }, []);
 
   function handleImage(event) {
     const img = event.target.files[0];
@@ -46,7 +55,7 @@ export default function EditPost({ post }) {
     <form onSubmit={handleForm}>
       <div className="flex flex-col gap-10">
         <p className="text-3xl">Edit Post</p>
-        <Image src={image} width={200} height={200} />
+        <Image alt="placeholder" src={image} width={200} height={200} />
         <input type="file" name="image" onChange={handleImage} />
         <input type="hidden" name="id" defaultValue={_id} />
         <input

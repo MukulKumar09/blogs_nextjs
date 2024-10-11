@@ -4,6 +4,7 @@ export default function Hero() {
   return (
     <section className="flex gap-28 justify-center ">
       <Image
+        alt="placeholder"
         src="/images/site/me.jpg"
         alt="Me!"
         height={200}
@@ -31,10 +32,30 @@ export default function Hero() {
           <br /> This project showcases my ability to build modern, responsive
           web applications with a focus on user experience and scalability.
           <div className="flex gap-8 my-10">
-            <Image src="/images/site/nextjs.png" height={50} width={50} />
-            <Image src="/images/site/tailwindcss.png" height={50} width={50} />
-            <Image src="/images/site/react.png" height={50} width={50} />
-            <Image src="/images/site/mongodb.png" height={50} width={100} />
+            <Image
+              alt="placeholder"
+              src="/images/site/nextjs.png"
+              height={50}
+              width={50}
+            />
+            <Image
+              alt="placeholder"
+              src="/images/site/tailwindcss.png"
+              height={50}
+              width={50}
+            />
+            <Image
+              alt="placeholder"
+              src="/images/site/react.png"
+              height={50}
+              width={50}
+            />
+            <Image
+              alt="placeholder"
+              src="/images/site/mongodb.png"
+              height={50}
+              width={100}
+            />
           </div>
           Key features include:
           <ul>

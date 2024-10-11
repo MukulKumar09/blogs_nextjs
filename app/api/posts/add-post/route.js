@@ -1,4 +1,7 @@
 import dbOperation from "@/app/helpers/dbOperation";
+import { put } from "@vercel/blob";
+import { revalidatePath } from "next/cache";
+
 import fs from "fs";
 export async function POST(req) {
   const formData = await req.formData();
@@ -17,18 +20,25 @@ export async function POST(req) {
   try {
     const res = await dbOperation("new", document);
     if (!image.name == "") {
+      const imageFile = formData.get("image");
       const extension = image.name.split(".").pop();
-      const stream = fs.createWriteStream(
-        `public/images/posts/${res.id}.${extension}`
-      );
-      const bufferedImage = await image.arrayBuffer();
-      stream.write(
-        Buffer.from(bufferedImage, (error) => {
-          if (error) {
-            throw new Error("Image failed!");
-          }
-        })
-      );
+      const fileName = `${res.id}.${extension}`;
+      const blob = await put(fileName, imageFile, {
+        access: "public",
+      });
+      revalidatePath("/");
+
+      // const stream = fs.createWriteStream(
+      //   `public/images/posts/${res.id}.${extension}`
+      // );
+      // const bufferedImage = await image.arrayBuffer();
+      // stream.write(
+      //   Buffer.from(bufferedImage, (error) => {
+      //     if (error) {
+      //       throw new Error("Image failed!");
+      //     }
+      //   })
+      // );
     }
     return Response.json(res, { status: 200 });
   } catch (error) {

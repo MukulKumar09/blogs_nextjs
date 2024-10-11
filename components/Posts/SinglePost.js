@@ -1,14 +1,23 @@
 "use client";
 import Image from "next/image";
 import ButtonRedirect from "../ButtonRedirect/ButtonRedirect";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import deletePost from "@/app/helpers/deletePost";
 import { useRouter } from "next/navigation";
-import postImage from "@/app/helpers/postImage";
 
 export default function SinglePost(props) {
   const { push } = useRouter();
   const [shouldDelete, setShouldDelete] = useState(0);
+  const [imageUrl, setImageUrl] = useState("");
+  useEffect(() => {
+    async function asyncFetch() {
+      const res = await fetch(`/api/blobs/get-single/${id}`);
+      const imageRes = await res.json();
+      console.log("response \n\n\n\n", imageRes);
+      if (imageRes[0].url) setImageUrl(imageRes[0].url);
+    }
+    asyncFetch();
+  }, []);
   const id = props.post[0]._id.toString();
   const { title, content, isFeatured, extension, updatedAt, createdAt } =
     props.post[0];
@@ -19,6 +28,7 @@ export default function SinglePost(props) {
     month: "long",
     year: "numeric",
   });
+
   async function handleDelete() {
     const res = await deletePost(id);
     if (res.status == 200) push("/posts");
@@ -27,7 +37,8 @@ export default function SinglePost(props) {
   return (
     <article className="flex flex-col gap-10">
       <Image
-        src={postImage(id, extension)}
+        alt="placeholder"
+        src={imageUrl}
         height={200}
         width={700}
         className="m-auto rounded-2xl"

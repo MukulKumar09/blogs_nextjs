@@ -50,7 +50,9 @@ export default function NewPost() {
           placeholder="Content"
           className="input"
         />
-        {image && <Image src={image} width={200} height={200} />}
+        {image && (
+          <Image alt="placeholder" src={image} width={200} height={200} />
+        )}
         <input type="file" name="image" onChange={handleImage} />
         <div className="flex gap-5">
           Featured?
