@@ -27,18 +27,6 @@ export async function POST(req) {
         access: "public",
       });
       revalidatePath("/");
-
-      // const stream = fs.createWriteStream(
-      //   `public/images/posts/${res.id}.${extension}`
-      // );
-      // const bufferedImage = await image.arrayBuffer();
-      // stream.write(
-      //   Buffer.from(bufferedImage, (error) => {
-      //     if (error) {
-      //       throw new Error("Image failed!");
-      //     }
-      //   })
-      // );
     }
     return Response.json(res, { status: 200 });
   } catch (error) {

@@ -1,6 +1,8 @@
 import dbOperation from "@/app/helpers/dbOperation";
-import fs from "fs";
+import { put } from "@vercel/blob";
+import { revalidatePath } from "next/cache";
 import { ObjectId } from "mongodb";
+
 export async function PUT(req) {
   const formData = await req.formData();
   const _id = formData.get("id");
@@ -27,17 +29,11 @@ export async function PUT(req) {
 
     if (!image.name == "") {
       const extension = image.name.split(".").pop();
-      const stream = fs.createWriteStream(
-        `public/images/posts/${_id}.${extension}`
-      );
-      const bufferedImage = await image.arrayBuffer();
-      stream.write(
-        Buffer.from(bufferedImage, (error) => {
-          if (error) {
-            throw new Error("Image failed!");
-          }
-        })
-      );
+      const fileName = `${res.id}.${extension}`;
+      const blob = await put(fileName, image, {
+        access: "public",
+      });
+      revalidatePath("/");
     }
     return Response.json(res, { status: 200 });
   } catch (error) {
