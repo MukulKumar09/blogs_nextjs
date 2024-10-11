@@ -27,9 +27,10 @@ export default function Hero() {
         </div>
         <div>
           I&apos;ve developed NextBLOG, a cutting-edge fullstack webapp built
-          using NextJS.
-          <br /> This project showcases my ability to build modern, responsive
-          web applications with a focus on user experience and scalability.
+          using NextJS, MongoDB, Vercel Blob.
+          <br /> This project showcases my ability to build fullstack
+          applications with a focus on user experience and scalability. It
+          harnesses server and client hybrid capabilities of NextJS.
           <div className="flex gap-8 my-10">
             <Image
               alt="placeholder"
@@ -67,7 +68,7 @@ export default function Hero() {
               switching
             </li>
             <li>🛠️ Debouncing Search, DOM Manipulation using React hooks.</li>
-            <li> in React.</li>
+            <li>📷 Using Vercel Blob to store and fetch images.</li>
             <li>🌈 Using TailwindCSS for UI Tooling.</li>
             <li>⚡ Using MongoDB to store all blogs.</li>
           </ul>
