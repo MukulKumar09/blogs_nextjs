@@ -1,5 +1,5 @@
 import dbOperation from "@/app/helpers/dbOperation";
-import { put } from "@vercel/blob";
+import { put, list, del } from "@vercel/blob";
 import { revalidatePath } from "next/cache";
 import { ObjectId } from "mongodb";
 
@@ -26,12 +26,21 @@ export async function PUT(req) {
       },
       { $set: document },
     ]);
+    const { blobs } = await list({ limit: 1, prefix: _id });
+    console.log("blobs: ", blobs);
+    if (blobs[0]) {
+      const oldImage = blobs[0].url;
+      const deleteImage = await del(oldImage);
+    }
 
     if (!image.name == "") {
       const extension = image.name.split(".").pop();
-      const fileName = `${res.id}.${extension}`;
+      const fileName = `${_id}.${extension}`;
+      console.log(res);
+
       const blob = await put(fileName, image, {
         access: "public",
+        addRandomSuffix: false,
       });
       revalidatePath("/");
     }

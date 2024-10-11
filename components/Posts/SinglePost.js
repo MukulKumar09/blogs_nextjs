@@ -14,7 +14,8 @@ export default function SinglePost(props) {
       const res = await fetch(`/api/blobs/get-single/${id}`);
       const imageRes = await res.json();
       console.log("response \n\n\n\n", imageRes);
-      if (imageRes[0]) setImageUrl(imageRes[0].url);
+      if (imageRes[0])
+        setImageUrl(imageRes[0].url + `?v=${new Date().getTime()}`);
     }
     asyncFetch();
   }, []);

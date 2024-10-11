@@ -25,6 +25,7 @@ export async function POST(req) {
       const fileName = `${res.id}.${extension}`;
       const blob = await put(fileName, imageFile, {
         access: "public",
+        addRandomSuffix: false,
       });
       revalidatePath("/");
     }
