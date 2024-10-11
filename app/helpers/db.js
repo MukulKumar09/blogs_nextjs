@@ -1,6 +1,6 @@
 const { MongoClient } = require("mongodb");
-const url = process.env.DB_CONNECTION;
-const client = new MongoClient(url);
+
+const client = new MongoClient(process.env.DB_CONNECTION);
 const dbName = "NextJSBlog";
 export async function connect() {
   try {
