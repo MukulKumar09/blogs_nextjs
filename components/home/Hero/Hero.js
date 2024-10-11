@@ -6,7 +6,6 @@ export default function Hero() {
       <Image
         alt="placeholder"
         src="/images/site/me.jpg"
-        alt="Me!"
         height={200}
         width={200}
         className="m-auto rounded-xl"
