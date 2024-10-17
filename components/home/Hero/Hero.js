@@ -16,11 +16,19 @@ export default function Hero() {
           <div className="flex gap-5 pt-5 ">
             <a
               href="https://www.linkedin.com/in/mukul-kumar-488b1119b/"
-              className="underline"
+              className="text-cyan-200"
             >
               LinkedIn
             </a>
-            <a href="mailto:mukulyashi@gmail.com" className="underline">
+            |
+            <a
+              href="https://github.com/MukulKumar09/blogs_nextjs"
+              className="text-cyan-200"
+            >
+              Github
+            </a>
+            |
+            <a href="mailto:mukulyashi@gmail.com" className="text-cyan-200">
               mukulyashi@gmail.com
             </a>
           </div>

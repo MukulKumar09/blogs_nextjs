@@ -26,14 +26,15 @@ export async function PUT(req) {
       },
       { $set: document },
     ]);
-    const { blobs } = await list({ limit: 1, prefix: _id });
-    console.log("blobs: ", blobs);
-    if (blobs[0]) {
-      const oldImage = blobs[0].url;
-      const deleteImage = await del(oldImage);
-    }
+
+    console.log(image.name);
 
     if (!image.name == "") {
+      const { blobs } = await list({ limit: 1, prefix: _id });
+      if (blobs[0]) {
+        const oldImage = blobs[0].url;
+        const deleteImage = await del(oldImage);
+      }
       const extension = image.name.split(".").pop();
       const fileName = `${_id}.${extension}`;
       console.log(res);
