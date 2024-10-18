@@ -26,12 +26,17 @@ export default function PostItem({ post, index }) {
     return (
       <div
         key={index}
-        style={{ width: 300 }}
-        className="bg-slate-900 overflow-hidden rounded-3xl"
+        // style={{ width: 300 }}
+        className="w-full md:w-1/2 lg:w-1/3 bg-slate-900 overflow-hidden rounded-3xl"
       >
         <Link href={postUrl}>
-          <div className="w-full h-40 overflow-hidden">
-            <Image alt="placeholder" src={imageUrl} height={200} width={300} />
+          <div className="w-full h-40 relative overflow-hidden">
+            <Image
+              alt="placeholder"
+              src={imageUrl}
+              objectFit="cover"
+              layout="fill"
+            />
           </div>
           <div className="p-5">
             <p className="text-lg">{title}</p>

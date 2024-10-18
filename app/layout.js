@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url('/images/site/bg.png')] bg-contain bg-no-repeat bg-top bg-center`}
       >
         <MainLayout>{children}</MainLayout>
       </body>

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="flex gap-28 justify-center ">
+    <section className="flex flex-col lg:flex-row gap-16 lg:gap-28 justify-center">
       <Image
         alt="placeholder"
         src="/images/site/me.jpg"
@@ -12,24 +12,38 @@ export default function Hero() {
       />
       <div className="flex flex-col gap-10">
         <div>
-          <div className="text-4xl">Hi, It&apos;s Mukul!</div>
-          <div className="flex gap-5 pt-5 ">
-            <a
-              href="https://www.linkedin.com/in/mukul-kumar-488b1119b/"
-              className="text-cyan-200"
-            >
-              LinkedIn
-            </a>
-            |
+          <div className="text-4xl text-center lg:text-left">
+            Hi, It&apos;s Mukul!
+          </div>
+          <div className="flex flex-wrap align-middle justify-center lg:justify-start gap-5 pt-5 ">
             <a
               href="https://github.com/MukulKumar09/blogs_nextjs"
               className="text-cyan-200"
             >
-              Github
+              <img
+                alt="placeholder"
+                src="/images/site/github.jpg"
+                style={{ height: "20px", width: "auto" }}
+              />
             </a>
-            |
+            <span className="text-slate-600">|</span>
+            <a
+              href="https://www.linkedin.com/in/mukul-kumar-488b1119b/"
+              className="text-cyan-200"
+            >
+              <img
+                alt="placeholder"
+                src="/images/site/linkedin.png"
+                style={{ height: "20px", width: "auto" }}
+              />
+            </a>
+            <span className="text-slate-600">|</span>
             <a href="mailto:mukulyashi@gmail.com" className="text-cyan-200">
-              mukulyashi@gmail.com
+              <img
+                alt="placeholder"
+                src="/images/site/gmail.png"
+                style={{ height: "20px", width: "auto" }}
+              />
             </a>
           </div>
         </div>
@@ -39,30 +53,26 @@ export default function Hero() {
           <br /> This project showcases my ability to build fullstack
           applications with a focus on user experience and scalability. It
           harnesses server and client hybrid capabilities of NextJS.
-          <div className="flex gap-8 my-10">
-            <Image
+          <div className="flex flex-wrap justify-center lg:justify-start gap-8 my-10">
+            <img
               alt="placeholder"
               src="/images/site/nextjs.png"
-              height={50}
-              width={50}
+              style={{ height: "50px", width: "auto" }}
             />
-            <Image
+            <img
               alt="placeholder"
               src="/images/site/tailwindcss.png"
-              height={50}
-              width={50}
+              style={{ height: "50px", width: "auto" }}
             />
-            <Image
+            <img
               alt="placeholder"
               src="/images/site/react.png"
-              height={50}
-              width={50}
+              style={{ height: "50px", width: "auto" }}
             />
-            <Image
+            <img
               alt="placeholder"
               src="/images/site/mongodb.png"
-              height={50}
-              width={100}
+              style={{ height: "50px", width: "auto" }}
             />
           </div>
           Key features include:
@@ -80,6 +90,9 @@ export default function Hero() {
             <li>🌈 Using TailwindCSS for UI Tooling.</li>
             <li>⚡ Using MongoDB to store all blogs.</li>
           </ul>
+          <div className="pt-10">
+            <span className="text-4xl">About Me</span>
+          </div>
         </div>
       </div>
     </section>

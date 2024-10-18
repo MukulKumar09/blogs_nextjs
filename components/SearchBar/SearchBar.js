@@ -53,17 +53,18 @@ export default function SearchBar() {
             Close
           </button>
         </div>
-        {results.map((item, i) => (
-          <button
-            className="w-full p-3 text-left underline"
-            onClick={() => {
-              push(`/posts/${item._id}`);
-            }}
-            key={i}
-          >
-            <p>{item.title}</p>
-          </button>
-        ))}
+        {results.length > 0 &&
+          results.map((item, i) => (
+            <button
+              className="w-full p-3 text-left underline"
+              onClick={() => {
+                push(`/posts/${item._id}`);
+              }}
+              key={i}
+            >
+              <p>{item.title}</p>
+            </button>
+          ))}
       </div>
     </>
   );
