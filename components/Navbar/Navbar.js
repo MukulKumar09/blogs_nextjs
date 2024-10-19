@@ -4,7 +4,7 @@ import Logo from "../Logo/Logo";
 import SearchBar from "../SearchBar/SearchBar";
 import { useRouter } from "next/navigation";
 import { MagnifyingGlassIcon, PlusIcon } from "@radix-ui/react-icons";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 export default function Navbar() {
