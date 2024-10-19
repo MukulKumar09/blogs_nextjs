@@ -3,12 +3,12 @@ import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import addPost from "@/app/helpers/addPost";
-import SnackbarProvider, { useSnackbar } from "react-simple-snackbar";
+import { useToast } from "@/hooks/use-toast";
 
 export default function NewPost() {
   const { push } = useRouter();
   const [image, setImage] = useState(null);
-  const [openSnackbar, closeSnackbar] = useSnackbar();
+  const { toast } = useToast();
 
   function handleImage(event) {
     const img = event.target.files[0];
@@ -21,7 +21,9 @@ export default function NewPost() {
   }
 
   async function handleForm(event) {
-    openSnackbar("Creating post...");
+    toast({
+      title: "Creating post...",
+    });
     event.preventDefault();
 
     try {
@@ -29,7 +31,9 @@ export default function NewPost() {
       const res = await addPost(formData);
       const res_json = await res.json();
       if (res.status == 200) {
-        openSnackbar("Post Created.");
+        toast({
+          title: "Post created.",
+        });
         push("/posts/" + res_json.id);
       } else {
         throw new Error(res);

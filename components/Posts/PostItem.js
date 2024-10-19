@@ -1,4 +1,3 @@
-import postImage from "@/app/helpers/postImage";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -27,7 +26,7 @@ export default function PostItem({ post, index }) {
       <div
         key={index}
         // style={{ width: 300 }}
-        className="w-full md:w-1/2 lg:w-1/3 bg-slate-900 overflow-hidden rounded-3xl"
+        className="w-full bg-slate-900 overflow-hidden rounded-3xl"
       >
         <Link href={postUrl}>
           <div className="w-full h-40 relative overflow-hidden">

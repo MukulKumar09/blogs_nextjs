@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import MainLayout from "@/components/MainLayout/MainLayout";
+import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,9 +23,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url('/images/site/bg.png')] bg-contain bg-no-repeat bg-top bg-center`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <MainLayout>{children}</MainLayout>
+        <Toaster />
       </body>
     </html>
   );

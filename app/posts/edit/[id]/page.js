@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import EditPost from "@/components/Posts/EditPost";
-import SnackbarProvider from "react-simple-snackbar";
 export default function EditPostPage({ params }) {
   const [post, setPost] = useState(null);
   const id = params.id;
@@ -15,7 +14,5 @@ export default function EditPostPage({ params }) {
     asyncFetch();
   }, []);
 
-  return (
-    <SnackbarProvider>{post && <EditPost post={post[0]} />}</SnackbarProvider>
-  );
+  return <>{post && <EditPost post={post[0]} />}</>;
 }

@@ -2,16 +2,14 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import editPost from "@/app/helpers/editPost";
-import postImage from "@/app/helpers/postImage";
-import { useSnackbar } from "react-simple-snackbar";
-
+import { useToast } from "@/hooks/use-toast";
 import Image from "next/image";
 
 export default function EditPost({ post }) {
   const { push } = useRouter();
   const { _id, title, content, isFeatured, extension } = post;
   const path = "/posts/" + _id;
-  const [openSnackbar, closeSnackbar] = useSnackbar();
+  const { toast } = useToast();
   const [image, setImage] = useState("");
   useEffect(() => {
     async function asyncFetch() {
@@ -35,13 +33,17 @@ export default function EditPost({ post }) {
 
   async function handleForm(event) {
     event.preventDefault();
-    openSnackbar("Saving post...");
+    toast({
+      title: "Saving post...",
+    });
 
     try {
       const formData = new FormData(event.target);
       const res = await editPost(formData);
       if (res.status == 200) {
-        openSnackbar("Post Saved.");
+        toast({
+          title: "Post Saved.",
+        });
         push(path);
       } else {
         throw new Error(res);
