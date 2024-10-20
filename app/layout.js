@@ -10,8 +10,8 @@ const openSans = Oswald({
 });
 
 export const metadata = {
-  title: "NextBLOG",
-  description: "NextBLOG, blog website made using NextJS.",
+  title: "Mukul's Portfolio",
+  description: "I showcase my work here.",
 };
 
 export default function RootLayout({ children }) {

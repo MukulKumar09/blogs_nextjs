@@ -46,9 +46,9 @@ export default function Hero() {
         <div className="relative">
           <Image
             alt="placeholder"
-            src="/images/site/me.jpg"
-            height={200}
-            width={200}
+            src="/images/site/me.png"
+            height={300}
+            width={300}
             className="rounded-xl"
           />
         </div>
