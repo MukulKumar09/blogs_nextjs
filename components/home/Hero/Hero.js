@@ -80,9 +80,9 @@ export default function Hero() {
         </div>
       </div>
       <div className="w-full lg:w-2/3 flex flex-col gap-10">
-        <div className="flex flex-col gap-6">
+        <div className="lg:flex flex-col gap-6 hidden">
           <span className="text-4xl">Hi, It&apos;s Mukul!</span>
-          <div className="flex flex-  wrap gap-5">
+          <div className="flex flex-wrap gap-5">
             <a
               href="https://github.com/MukulKumar09/blogs_nextjs"
               className="text-cyan-200"
