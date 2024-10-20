@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col lg:flex-row gap-10 items-center">
+    <section className="flex flex-col lg:flex-row gap-10">
       <div className="w-full lg:w-1/3 flex flex-col gap-20 items-center">
         <div className="relative">
           <Image
@@ -13,26 +13,22 @@ export default function Hero() {
             className="rounded-xl"
           />
         </div>
-        <div className="flex flex-row lg:flex-col xl:flex-row gap-8 items-center bg-gray-800 px-8 py-3 rounded-xl">
+        <div className="flex flex-col gap-5 items-center p-5 rounded-2xl bg-slate-800 border-2 border-slate-600 shadow-[inset_0_0px_20px_#334155] ">
+          <span className="text-gray-500">Download my App</span>
           <Image
             src="/images/site/tabber_logo.png"
             alt="tabber"
             height={70}
             width={70}
-            style={{ objectFit: "contain" }}
             className="rounded-xl"
           />
-          <div className="flex flex-col items-start lg:items-center xl:items-start">
-            <span className="text-gray-500">Download my App</span>
-            <div>
-              <a href="https://play.google.com/store/apps/details?id=com.tabber">
-                <span className="text-xl">Tabber - File Manager</span>
-              </a>
-              <br />
-              <span className="text-sm text-gray-400">
-                ⭐ 4.8 (500+ Downloads)
-              </span>
-            </div>
+          <div className="flex flex-col items-center">
+            <a href="https://play.google.com/store/apps/details?id=com.tabber">
+              <span className="text-xl">Tabber - File Manager</span>
+            </a>
+            <span className="text-sm text-gray-400">
+              ⭐ 4.8 (500+ Downloads)
+            </span>
             <a href="https://play.google.com/store/apps/details?id=com.tabber">
               <Image
                 src="/images/site/google_play.png"

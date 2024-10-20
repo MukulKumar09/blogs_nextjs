@@ -3,7 +3,9 @@ export default function MainLayout({ children }) {
   return (
     <>
       <Navbar />
-      <div className="w-3/4 m-auto mt-20">{children}</div>
+      <div className="md:w-3/4 lg:w-1/2 m-5 pt-10 md:pt-20 md:m-auto">
+        {children}
+      </div>
     </>
   );
 }

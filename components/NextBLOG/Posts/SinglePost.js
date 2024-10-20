@@ -37,6 +37,10 @@ export default function SinglePost(props) {
   }
   return (
     <article className="flex flex-col gap-10">
+      <div>
+        <p className="text-3xl">{title}</p>
+        <p className="text-slate-500">{formattedDate}</p>
+      </div>
       <Image
         alt="placeholder"
         src={imageUrl}
@@ -45,10 +49,6 @@ export default function SinglePost(props) {
         className="m-auto rounded-2xl"
       />
       <div className="flex justify-between">
-        <div>
-          <p className="text-3xl">{title}</p>
-          <p className="text-slate-500">{formattedDate}</p>
-        </div>
         <div>
           <p>{isFeatured && "Featured ⭐"}</p>
         </div>
