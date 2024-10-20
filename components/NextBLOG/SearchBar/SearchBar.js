@@ -57,7 +57,7 @@ export default function SearchBar({ showSearch }) {
             }}
             key={i}
           >
-            <p>{item.title}</p>
+            <p className="font-sans">{item.title}</p>
           </button>
         ))}
     </div>

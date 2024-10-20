@@ -38,7 +38,7 @@ export default function SinglePost(props) {
   return (
     <article className="flex flex-col gap-10">
       <div>
-        <p className="text-3xl">{title}</p>
+        <p className="font-sans text-5xl">{title}</p>
         <p className="text-slate-500">{formattedDate}</p>
       </div>
       <Image

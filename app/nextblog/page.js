@@ -20,37 +20,15 @@ export default function AllPostsPage() {
     <>
       <div className="flex flex-col gap-10">
         <div className="flex flex-col gap-5">
-          <span className="text-4xl border-b-2 border-gray-800">
+          <span className="font-sans text-4xl border-b-2 border-gray-800">
             Welcome to NextBLOG
           </span>
           I&apos;ve developed NextBLOG, a cutting-edge fullstack webapp built
           using NextJS, MongoDB, Vercel Blob.
           <br /> This project showcases my ability to build fullstack
           applications with a focus on user experience and scalability. It
-          harnesses server and client hybrid capabilities of NextJS.
-          <div className="flex flex-wrap gap-8 w-full justify-center">
-            <img
-              alt="placeholder"
-              src="/images/site/nextjs.png"
-              style={{ height: "50px", width: "auto" }}
-            />
-            <img
-              alt="placeholder"
-              src="/images/site/tailwindcss.png"
-              style={{ height: "50px", width: "auto" }}
-            />
-            <img
-              alt="placeholder"
-              src="/images/site/react.png"
-              style={{ height: "50px", width: "auto" }}
-            />
-            <img
-              alt="placeholder"
-              src="/images/site/mongodb.png"
-              style={{ height: "50px", width: "auto" }}
-            />
-          </div>
-          Key features include:
+          harnesses server and client hybrid capabilities of NextJS. Key
+          features include:
           <ul>
             <li>
               ✨ Efficient integration of server-side, client-side components

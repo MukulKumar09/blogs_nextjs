@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="flex flex-col lg:flex-row gap-10">
       <div className="flex flex-col lg:hidden gap-6 items-center">
-        <span className="text-4xl">Hi, It&apos;s Mukul!</span>
+        <span className="font-sans text-4xl">Hi, It&apos;s Mukul!</span>
         <div className="flex flex-wrap gap-5">
           <a
             href="https://github.com/MukulKumar09/blogs_nextjs"
@@ -37,7 +37,7 @@ export default function Hero() {
           </a>
         </div>
         <div className="text-sm">
-          With over 3 Years experience of delivering products, I can brings your
+          With over 3 Years experience of delivering products, I can bring your
           concept to reality. With great problem solving skills and fullstack
           expertise, I can provide cutting-edge solutions for your business.
         </div>
@@ -81,7 +81,7 @@ export default function Hero() {
       </div>
       <div className="w-full lg:w-2/3 flex flex-col gap-10">
         <div className="lg:flex flex-col gap-6 hidden">
-          <span className="text-4xl">Hi, It&apos;s Mukul!</span>
+          <span className="font-sans text-4xl">Hi, It&apos;s Mukul!</span>
           <div className="flex flex-wrap gap-5">
             <a
               href="https://github.com/MukulKumar09/blogs_nextjs"
@@ -120,8 +120,34 @@ export default function Hero() {
             business.
           </div>
         </div>
-        <span className="text-4xl border-b-2 border-gray-800">About Me</span>
+        <span className="font-sans text-4xl border-b-2 border-gray-800">
+          About Me
+        </span>
         <ul className="flex flex-col gap-3">
+          <li>
+            <div className="flex flex-wrap gap-8 w-full my-8">
+              <img
+                alt="placeholder"
+                src="/images/site/nextjs.png"
+                style={{ height: "50px", width: "auto" }}
+              />
+              <img
+                alt="placeholder"
+                src="/images/site/tailwindcss.png"
+                style={{ height: "50px", width: "auto" }}
+              />
+              <img
+                alt="placeholder"
+                src="/images/site/react.png"
+                style={{ height: "50px", width: "auto" }}
+              />
+              <img
+                alt="placeholder"
+                src="/images/site/mongodb.png"
+                style={{ height: "50px", width: "auto" }}
+              />
+            </div>
+          </li>
           <li>
             ✔️ 2 Years of proven experience as Frontend & QA Analyst. Gained a
             vast skillset by working on diverse set of projects with clients

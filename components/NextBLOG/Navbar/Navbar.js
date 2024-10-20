@@ -16,14 +16,18 @@ export default function Navbar() {
         <div className="md:w-3/4 m-auto flex flex-row p-3 justify-between  items-center">
           <Link href="/" className="flex gap-3 items-center">
             <Logo />
-            <p className="text-xl text-amber-200">NextBLOG</p>
+            <p className="text-xl font-sans text-amber-200">NextBLOG</p>
           </Link>
           <div className="flex flex-row">
             <Button onClick={() => push("/nextblog/new")}>
               <PlusIcon />
-              <span className="hidden md:block"> Create</span>
+              <span className="hidden md:block font-sans"> Create</span>
             </Button>
-            <Button variant="ghost" onClick={() => push("/nextblog/")}>
+            <Button
+              variant="ghost"
+              className="font-sans"
+              onClick={() => push("/nextblog/")}
+            >
               All Posts
             </Button>
             <div className="flex flex-col items-end">
