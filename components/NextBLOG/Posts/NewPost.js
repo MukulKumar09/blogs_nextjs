@@ -46,7 +46,7 @@ export default function NewPost() {
   return (
     <form onSubmit={handleForm}>
       <div className="flex flex-col gap-10">
-        <p className="text-3xl">Create New Post</p>
+        <span className="font-sans text-3xl">Create New Post</span>
         <input type="text" name="title" placeholder="Title" className="input" />
         <input
           type="text"

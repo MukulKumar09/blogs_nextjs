@@ -56,7 +56,7 @@ export default function EditPost({ post }) {
   return (
     <form onSubmit={handleForm}>
       <div className="flex flex-col gap-10">
-        <p className="text-3xl">Edit Post</p>
+        <span className="font-sans text-3xl">Edit Post</span>
         <Image alt="placeholder" src={image} width={200} height={200} />
         <input type="file" name="image" onChange={handleImage} />
         <input type="hidden" name="id" defaultValue={_id} />

@@ -4,6 +4,7 @@ import ButtonRedirect from "../ButtonRedirect/ButtonRedirect";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import deletePost from "@/app/nextblog/helpers/deletePost";
+import FeaturedPosts from "@/components/home/FeaturedPosts/FeaturedPosts";
 
 export default function SinglePost(props) {
   const { push } = useRouter();
@@ -37,9 +38,12 @@ export default function SinglePost(props) {
   }
   return (
     <article className="flex flex-col gap-10">
-      <div>
+      <div className="flex flex-col gap-5">
         <p className="font-sans text-5xl">{title}</p>
-        <p className="text-slate-500">{formattedDate}</p>
+        <div className="flex justify-between">
+          <span className="text-slate-500">{formattedDate}</span>
+          <span className="font-sans">{isFeatured && "Featured ⭐"}</span>
+        </div>
       </div>
       <Image
         alt="placeholder"
@@ -48,11 +52,6 @@ export default function SinglePost(props) {
         width={700}
         className="m-auto rounded-2xl"
       />
-      <div className="flex justify-between">
-        <div>
-          <p>{isFeatured && "Featured ⭐"}</p>
-        </div>
-      </div>
       <p>{content}</p>
       <div className="flex gap-3 justify-end">
         <ButtonRedirect url={`/nextblog/posts/edit/${id}`} type="btn">
@@ -65,6 +64,7 @@ export default function SinglePost(props) {
           {shouldDelete ? "Confirm Delete this post?" : "Delete Post"}
         </button>
       </div>
+      <FeaturedPosts exclude={id} />
     </article>
   );
 }

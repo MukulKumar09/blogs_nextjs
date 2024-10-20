@@ -38,7 +38,7 @@ export default function PostItem({ post, index }) {
             />
           </div>
           <div className="flex flex-col gap-3 p-5">
-            <p className="font-sans leading-5 line-clamp-2 text-lg">{title}</p>
+            <p className="font-sans  line-clamp-2 text-xl">{title}</p>
             <div className="flex justify-between">
               <span className="text-sm text-slate-500">{formattedDate}</span>
               <span className="text-sm text-slate-500">

@@ -63,7 +63,7 @@ export default function Hero() {
           />
           <div className="flex flex-col items-center">
             <a href="https://play.google.com/store/apps/details?id=com.tabber">
-              <span className="text-xl">Tabber - File Manager</span>
+              <span className="font-sans text-xl">Tabber - File Manager</span>
             </a>
             <span className="text-sm text-gray-400">
               ⭐ 4.8 (500+ Downloads)
@@ -123,9 +123,9 @@ export default function Hero() {
         <span className="font-sans text-4xl border-b-2 border-gray-800">
           About Me
         </span>
-        <ul className="flex flex-col gap-3">
+        <ul className="flex flex-col gap-8">
           <li>
-            <div className="flex flex-wrap gap-8 w-full my-8">
+            <div className="flex flex-wrap gap-8 justify-center lg:justify-start">
               <img
                 alt="placeholder"
                 src="/images/site/nextjs.png"
@@ -133,12 +133,17 @@ export default function Hero() {
               />
               <img
                 alt="placeholder"
-                src="/images/site/tailwindcss.png"
+                src="/images/site/nodejs.png"
                 style={{ height: "50px", width: "auto" }}
               />
               <img
                 alt="placeholder"
                 src="/images/site/react.png"
+                style={{ height: "50px", width: "auto" }}
+              />
+              <img
+                alt="placeholder"
+                src="/images/site/tailwindcss.png"
                 style={{ height: "50px", width: "auto" }}
               />
               <img
