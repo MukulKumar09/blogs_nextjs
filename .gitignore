@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-# /public/images/posts
+# /public/images/nextblog/
 /.pnp
 .pnp.js
 .yarn/install-state.gz
