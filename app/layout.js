@@ -1,6 +1,5 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import MainLayout from "@/components/NextBLOG/MainLayout/MainLayout";
 import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = localFont({
@@ -25,7 +24,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <MainLayout>{children}</MainLayout>
+        {children}
         <Toaster />
       </body>
     </html>
