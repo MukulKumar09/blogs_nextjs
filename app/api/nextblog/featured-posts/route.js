@@ -1,4 +1,4 @@
-import postsOperation from "@/app/helpers/postsOperation";
+import postsOperation from "@/app/nextblog/helpers/postsOperation";
 export async function GET(req) {
   try {
     const results = await postsOperation("get", { isFeatured: true });

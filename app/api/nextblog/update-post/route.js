@@ -1,4 +1,4 @@
-import postsOperation from "@/app/helpers/postsOperation";
+import postsOperation from "@/app/nextblog/helpers/postsOperation";
 import { put, list, del } from "@vercel/blob";
 import { revalidatePath } from "next/cache";
 import { ObjectId } from "mongodb";

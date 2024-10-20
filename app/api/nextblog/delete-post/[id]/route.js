@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import postsOperation from "@/app/helpers/postsOperation";
+import postsOperation from "@/app/nextblog/helpers/postsOperation";
 export async function DELETE(req, { params }) {
   const id = params.id;
   try {

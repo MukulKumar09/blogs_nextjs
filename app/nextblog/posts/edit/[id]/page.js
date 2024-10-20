@@ -12,7 +12,7 @@ export default function EditPostPage({ params }) {
       setPost(post);
     }
     asyncFetch();
-  }, []);
+  }, [id]);
 
   return <>{post && <EditPost post={post[0]} />}</>;
 }

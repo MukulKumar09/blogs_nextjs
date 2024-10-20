@@ -13,7 +13,7 @@ export default function SinglePostPage({ params }) {
       setPost(post);
     }
     asyncFetch();
-  }, []);
+  }, [id]);
 
   return <>{post && <SinglePost post={post} />}</>;
 }

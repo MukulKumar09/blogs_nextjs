@@ -16,6 +16,7 @@ export default function Hero() {
         <div className="flex flex-row lg:flex-col xl:flex-row gap-8 items-center bg-gray-800 px-8 py-3 rounded-xl">
           <Image
             src="/images/site/tabber_logo.png"
+            alt="tabber"
             height={70}
             width={70}
             style={{ objectFit: "contain" }}
@@ -35,6 +36,7 @@ export default function Hero() {
             <a href="https://play.google.com/store/apps/details?id=com.tabber">
               <Image
                 src="/images/site/google_play.png"
+                alt="googleplay"
                 height={150}
                 width={150}
               />
@@ -45,7 +47,7 @@ export default function Hero() {
       <div className="w-full lg:w-2/3 flex flex-col gap-10">
         <div>
           <div className="text-4xl text-center lg:text-left">
-            {"Hi, It's Mukul!"}
+            Hi, It&apos;s Mukul!
           </div>
           <div className="flex flex-wrap align-middle justify-center lg:justify-start gap-5 pt-5 ">
             <a
@@ -80,8 +82,8 @@ export default function Hero() {
           </div>
         </div>
         <div>
-          I've developed NextBLOG, a cutting-edge fullstack webapp built using
-          NextJS, MongoDB, Vercel Blob.
+          I&apos;ve developed NextBLOG, a cutting-edge fullstack webapp built
+          using NextJS, MongoDB, Vercel Blob.
           <br /> This project showcases my ability to build fullstack
           applications with a focus on user experience and scalability. It
           harnesses server and client hybrid capabilities of NextJS.
@@ -139,9 +141,10 @@ export default function Hero() {
                 Shambhoo etc{" "}
               </li>
               <li>
-                ✔️ I've worked with libraries like ReactJS, Redux TailwindCSS,
-                SeleniumJS, MS Playwright for highly scalable webapps. I build
-                code which is maintainable, easy to migrate and expand.{" "}
+                ✔️ I&apos;ve worked with libraries like ReactJS, Redux
+                TailwindCSS, SeleniumJS, MS Playwright for highly scalable
+                webapps. I build code which is maintainable, easy to migrate and
+                expand.{" "}
               </li>
               <li>
                 ✔️ Contributed to unit, regression, user acceptance testing,
